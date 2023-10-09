@@ -5,6 +5,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import ErroPage from "../Pages/ErrorPage/ErroPage";
 import Gallery from "../Pages/Gallery/Gallery";
 import Home from "../Pages/Home/Home";
+import ServicesPage from "../Pages/ServicesPage/ServicesPage";
 
 
 const router = createBrowserRouter([
@@ -18,8 +19,11 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: "/",
-                element: <Home></Home>,
+                path: "/services",
+                element: <ServicesPage></ServicesPage>,
+                loader: async () => {
+                    return fetch("services.json")
+                }
             },
             {
                 path: "/gallery",

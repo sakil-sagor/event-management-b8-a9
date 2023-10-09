@@ -12,7 +12,7 @@ const AllSummarySection = () => {
             <div className='container mx-auto px-2'>
                 <div>
                     <TitleBoard titleWord={"Our History makes us Strong"}></TitleBoard>
-                    {/* < TopSection headline={"Our History makes us Strong"} paragraph={''}></> */}
+
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 text mt-16'>
 
