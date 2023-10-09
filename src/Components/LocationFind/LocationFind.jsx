@@ -17,7 +17,7 @@ const LocationFind = () => {
                             <FaLocationPin className="text-pink-600 text-3xl mr-2"></FaLocationPin>
                             <div>
                                 <p className="font-semibold text-green-800 text-lg">  Location: </p>
-                                <p className="text-pink-600">Bir Hajipur, Hossainpur, Kishoreganj</p>
+                                <p className="text-pink-600">Haybatnagar, Kishoreganj sadar, Kihsoreganj</p>
                             </div>
                         </div>
                         <hr />
@@ -33,7 +33,7 @@ const LocationFind = () => {
                             <AiTwotoneMail className="text-pink-600 text-3xl mr-2"></AiTwotoneMail>
                             <div>
                                 <p className="font-semibold text-green-800 text-lg">  Mail Us: </p>
-                                <p className="text-pink-600">piplakandi@gmail.com</p>
+                                <p className="text-pink-600">info@management.com</p>
                             </div>
                         </div>
                         <hr />

@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 import LinkBar from "./LinkBar";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user)
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     const [open, setOpen] = useState(true)
     const routes = [
         { id: 1, path: '/', name: 'Home' },
         { id: 4, path: '/gallery', name: 'Gallery' },
         { id: 5, path: '/contactUs', name: 'Contact-Us' },
+
 
 
     ];
@@ -30,6 +40,20 @@ const Navbar = () => {
                                     <LinkBar key={route.id} route={route}></LinkBar>
                                 ))
                             }
+
+                            <li className='ml-2 mt-10 md:mt-0 active border md:border-0  nav-bg ' >
+                                {
+                                    user ?
+
+                                        <button onClick={handleSignOut} className="btn">   <span className="block py-2" >Log-out</span></button>
+                                        :
+                                        <Link to="/registration">
+                                            <span className="block py-2" >Login</span>
+                                        </Link>
+                                }
+                            </li>
+
+
                         </ul>
                         <div onClick={() => setOpen(!open)}>
                             {

@@ -1,54 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
-import { DonorContext } from '../../contexts/DonorProvider';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
-    const { loading, setLoading, setDonor, setUserPhone } = useContext(DonorContext)
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+
+    const { signIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || "/"
-    const data = {
-        contactNumber: phone,
-        password: password,
 
-    }
-    const handleLogin = (event) => {
-        event.preventDefault();
-        console.log(data)
-        fetch('https://bloodserver.lifezet.com/api/v1/donor/login', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json',
 
-            },
-            body: JSON.stringify(data)
-
-        })
-            .then(res => res.json())
+    const handleLogin = (e) => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password);
+        signIn(email, password)
             .then(result => {
+                console.log(result.user);
 
-                if (result.status === "success") {
-                    // const accessToken = result.data.token;
-                    // const data = result.data.other;
-                    localStorage.setItem("accessToken", result.data.token)
-                    localStorage.setItem("data", JSON.stringify(result.data.other))
-                    console.log(data)
-                    // setDonor(result.data.other)
-                    setLoading(false)
-                    navigate(from, { replace: true })
-                    // navigate('/dashboard')
-                }
-                if (result.error) {
-                    swal({
-                        title: "Fail!",
-                        text: data.error,
-                        icon: "error",
-                    });
-                }
+                // navigate after login
+                navigate(location?.state ? location.state : '/');
+
             })
+            .catch(error => {
+                console.error(error);
+            })
+
 
     }
     return (
@@ -59,13 +38,13 @@ const Login = () => {
                 <form className='md:flex justify-center md:m-0' onSubmit={handleLogin}>
                     <div className='md:w-96 px-4 py-8  bg-white rounded-md shadow-2xl shadow-blue-300'>
                         <div className='mb-3 '>
-                            <span className=' text-gray-600 font-semibold block mb-2 '> Phone </span>
-                            <input placeholder=' Your Phone Number ' required className="p-2 w-full  bg-white border border-gray-400 rounded-md " type="number" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            <span className=' text-gray-600 font-semibold block mb-2 '> Email </span>
+                            <input placeholder=' Your Email ' required className="p-2 w-full  bg-white border border-gray-400 rounded-md " type="email" name="email" />
                         </div>
 
                         <div className='mb-6 '>
                             <span className=' text-gray-600 font-semibold block mb-2'> Password </span>
-                            <input placeholder='Password' type="password" required className="p-2 w-full   bg-white border border-gray-400 rounded-md " value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input placeholder='Password' type="password" required className="p-2 w-full   bg-white border border-gray-400 rounded-md " name='password' />
                         </div>
 
                         <div className='mb-6'>
