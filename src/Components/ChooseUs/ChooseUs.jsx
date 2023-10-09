@@ -41,7 +41,7 @@ const ChooseUs = () => {
                         <div className="">
                             <BsBarChartLine className='mx-auto text-blue-500 text-6xl  p-2 rounded-full border-4 border-green-900 '></BsBarChartLine>
                         </div>
-                        <h3 className='text-gray-500 font-bold text-2xl my-4'>All Types of evepent </h3>
+                        <h3 className='text-gray-500 font-bold text-2xl my-4'>All Types of events </h3>
                         <p className='text-gray-500 font-semibold '>we provie weeding, birthday ,opeing and  all others</p>
                     </div>
                     <div className='  border rounded-md py-8 text-center bg-blue-50 shadow-2xl hover:shadow-blue-200  hover:bg-white duration-300' >
