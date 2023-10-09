@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Registration from "../Components/Registration/Registration";
+import ServiceDetails from "../Components/Services/ServiceDetails";
 import Main from "../Layout/Main";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import ErroPage from "../Pages/ErrorPage/ErroPage";
 import Gallery from "../Pages/Gallery/Gallery";
 import Home from "../Pages/Home/Home";
-import ServicesPage from "../Pages/ServicesPage/ServicesPage";
 
 
 const router = createBrowserRouter([
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: "/services",
-                element: <ServicesPage></ServicesPage>,
+                path: "/services/:id",
+                element: <ServiceDetails></ServiceDetails>,
                 loader: async () => {
                     return fetch("services.json")
                 }

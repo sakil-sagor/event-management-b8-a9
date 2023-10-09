@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
     console.log(service)
-    const { name, image, price, description } = service;
+    const { id, name, image, price, description } = service;
     return (
         <div className=' border rounded-md bg-blue-100  shadow-2xl'>
             <div>
@@ -15,6 +16,9 @@ const SingleService = ({ service }) => {
                 </div>
                 <div>
                     <p>{description.split(" ").slice(0, 20).join(" ") + "..."}  </p>
+                    <div className='bg-pink-500 text-center text-white px-2 py-1 rounded hover:bg-pink-800 duration-200'>
+                        <Link to={`services/${id}`}>Detials </Link>
+                    </div>
                 </div>
             </div>
         </div>
