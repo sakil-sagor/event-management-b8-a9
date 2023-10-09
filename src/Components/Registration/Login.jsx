@@ -23,7 +23,10 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success("User login successfully ")
-                navigate(location?.state ? location.state : '/');
+                setTimeout(function () {
+                    navigate(location?.state ? location.state : '/');
+                }, 500);
+
 
 
 
@@ -40,8 +43,11 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user)
-                navigate(location?.state ? location.state : '/');
+                // navigate(location?.state ? location.state : '/');
                 toast.success("User Register successfully ")
+                setTimeout(function () {
+                    navigate(location?.state ? location.state : '/');
+                }, 500);
             })
             .catch(error => {
                 console.error(error)

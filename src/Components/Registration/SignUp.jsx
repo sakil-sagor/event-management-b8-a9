@@ -46,8 +46,11 @@ const SignUp = ({ loginArea }) => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                navigate(location?.state ? location.state : '/');
+
                 toast.success("User Register successfully ")
+                setTimeout(function () {
+                    navigate(location?.state ? location.state : '/');
+                }, 500);
             })
             .catch(error => {
                 console.error(error.message)

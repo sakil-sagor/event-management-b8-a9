@@ -7,7 +7,7 @@ const ServiceDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/public/services.json');
+                const response = await fetch('/services.json');
                 const json = await response.json();
                 setServices(json);
 
@@ -20,6 +20,7 @@ const ServiceDetails = () => {
     }, [])
 
     console.log(services)
+    console.log("services")
     const singleService = services.find(service => service.id === parseInt(id));
 
     return (
