@@ -25,7 +25,7 @@ const ServiceDetails = () => {
     return (
         <div className='container mx-auto px-2 min-h-[80vh]'>
             <div>
-                <div className='h-[70vh] w-full'>
+                <div className='min-h-[60vh] md:h-[70vh] w-full'>
                     <img className='h-full w-full' src={singleService?.image} alt="" />
                 </div>
                 <div className='flex justify-between items-center mt-6'>

@@ -8,7 +8,7 @@ const ChooseUs = () => {
         <div className="my-16 ">
             <TitleBoard titleWord={'WHY CHOOSE US'}></TitleBoard>
             <div className="mt-16 ">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
                     <div className='  border rounded-md py-8 text-center bg-blue-50 shadow-2xl hover:shadow-blue-200  hover:bg-white duration-300' >
                         <div className="">
                             <FaUnlink className='mx-auto text-blue-500 text-6xl  p-2 rounded-full border-4 border-green-900 '></FaUnlink>
