@@ -3,7 +3,7 @@ import Services from '../../Components/Services/Services';
 
 const ServicesPage = () => {
     return (
-        <div>
+        <div className='container mx-auto px-2'>
             <Services></Services>
         </div>
     );
