@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
@@ -22,6 +24,9 @@ const Login = () => {
 
                 // navigate after login
                 navigate(location?.state ? location.state : '/');
+                toast.success("Success Notification !", {
+                    position: toast.POSITION.TOP_CENTER
+                });
 
             })
             .catch(error => {
@@ -58,6 +63,11 @@ const Login = () => {
                     </div>
                 </form >
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                theme="colored"
+            />
 
         </div>
     );

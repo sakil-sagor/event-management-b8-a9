@@ -1,12 +1,27 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ServiceDetails = () => {
+    const [services, setServices] = useState([])
     const { id } = useParams();
-    const services = useLoaderData();
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/public/services.json');
+                const json = await response.json();
+                setServices(json);
 
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchData();
+
+    }, [])
+
+    console.log(services)
     const singleService = services.find(service => service.id === parseInt(id));
-    console.log(singleService)
+
     return (
         <div className='container mx-auto px-2 min-h-[80vh]'>
             <div>
