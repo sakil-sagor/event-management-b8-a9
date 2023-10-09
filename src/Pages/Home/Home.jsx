@@ -11,10 +11,10 @@ const Home = () => {
             <div className='container mx-auto px-2 '>
                 <Slider></Slider>
             </div>
-            <div className='container mx-auto px-2 my-16'>
+            <div data-aos="animation_name" className='container mx-auto px-2 my-16'>
                 <Services></Services>
             </div>
-            <div>
+            <div data-aos="animation_name">
                 <AllSummarySection></AllSummarySection>
             </div>
             <div className='container mx-auto px-2 my-16'>

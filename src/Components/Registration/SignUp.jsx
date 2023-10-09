@@ -26,20 +26,20 @@ const SignUp = ({ loginArea }) => {
         const email = form.get('email');
         const password = form.get('password');
 
-        // if (password.length < 6) {
+        if (password.length < 6) {
 
-        //     toast.error('Password length is less then 6 charecter')
-        //     return
-        // }
-        // if (!capitalLetterRegex.test(password)) {
-        //     toast.error('Password must contain at least one capital letter.')
-        //     return;
-        // }
+            toast.error('Password length is less then 6 charecter')
+            return
+        }
+        if (!capitalLetterRegex.test(password)) {
+            toast.error('Password must contain at least one capital letter.')
+            return;
+        }
 
-        // if (!specialCharacterRegex.test(password)) {
-        //     toast.error('Password must contain at least one special character.')
-        //     return;
-        // }
+        if (!specialCharacterRegex.test(password)) {
+            toast.error('Password must contain at least one special character.')
+            return;
+        }
 
 
         // create user
