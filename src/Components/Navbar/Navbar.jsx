@@ -19,8 +19,10 @@ const Navbar = () => {
     const [open, setOpen] = useState(true)
     const routes = [
         { id: 1, path: '/', name: 'Home' },
-        { id: 4, path: '/gallery', name: 'Gallery' },
-        { id: 5, path: '/contactUs', name: 'Contact-Us' },
+        { id: 2, path: '/services', name: 'Services' },
+        { id: 3, path: '/gallery', name: 'Gallery' },
+        { id: 4, path: '/contactUs', name: 'Contact-Us' },
+        { id: 5, path: '/booking', name: 'Booking' },
 
 
 
@@ -92,7 +94,25 @@ const Navbar = () => {
                 </div>
                 <div className='md:hidden'>
 
-                    <ul className={` fixed text-center space-y-5 text-black duration-1000 pr-2 top-20 mt-1 h-screen  w-3/4 opacity-95 bg-green-900  ${!open ? " left-0" : "left-[-800px] "}`}>
+                    <ul className={` fixed text-center space-y-5 text-black duration-1000 pr-2 top-20 mt-1 h-screen  w-3/4 opacity-95 bg-green-500  ${!open ? " left-0" : "left-[-800px] "}`}>
+                        <li className='ml-2 mt-10 md:mt-0 active   nav-bg profile-holder' >
+                            {
+                                user?.email || user?.displayName ?
+                                    <img style={{ cursor: 'pointer' }} onClick={toggleText} className="w-12 rounded-full" src={loginPhoto()} alt="" />
+                                    :
+                                    < NavLink className="py-2  bg-blue-600  hover:text-pink-800  rounded-md" to="/registration">   <span className="block py-2">LogIn</span> </NavLink >
+                            }
+                            <div className='nav-item my-4 lg:my-0 proflie-item'>
+
+                                {user?.email || user?.displayName ?
+                                    <div className={profileState === 'Off' ? "active-profile-icon-area" : 'profile-icon-area'}>
+                                        <ProfileShortcut loginPhoto={loginPhoto}></ProfileShortcut>
+                                    </div>
+                                    :
+                                    ''
+                                }
+                            </div>
+                        </li>
                         {
                             routes.map(route => (
                                 <LinkBar open={open} setOpen={setOpen} key={route.id} route={route}></LinkBar>

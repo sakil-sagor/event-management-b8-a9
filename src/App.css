@@ -3,7 +3,7 @@ body {
 }
 
 a.active {
-    color: #0052FF;
+    color: red;
     text-decoration: underline;
 }
 
@@ -48,6 +48,6 @@ a.active {
 @media only screen and (max-width: 1023px) {
     .proflie-item {
         top: 50px;
-        right: 0px;
+        left: 0px;
     }
 }

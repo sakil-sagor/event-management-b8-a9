@@ -10,8 +10,8 @@ const ProfileShortcut = ({ loginPhoto }) => {
 
     return (
         <div className="profile-shortcut bg-blue-500 shadow-2xl">
-            <div className='mx-auto flex justify-center'>
-                <img style={{ cursor: 'pointer' }} className="w-12 rounded-full" src={loginPhoto()} alt="" />
+            <div className=' flex justify-center'>
+                <img style={{ cursor: 'pointer' }} className="w-12 rounded-full " src={loginPhoto()} alt="" />
             </div>
             <div className='mb-2'>
 

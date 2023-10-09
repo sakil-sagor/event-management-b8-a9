@@ -5,17 +5,19 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 
 const images = [
-    "https://i.ibb.co/rQzRpX4/pexels-rachel-claire-4577147.jpg",
-    "https://i.ibb.co/YB62HhN/Australia-Unique1.jpg",
-    "https://i.ibb.co/gym9J2d/opera.jpg",
-    "https://i.ibb.co/hg6sB3x/saint.jpg",
-    "https://i.ibb.co/hD3Qp4N/china.jpg",
-    "https://i.ibb.co/2WQ3bYF/licensed-image.jpg",
-    "https://i.ibb.co/xh684tS/pexels-tae-fuller-1141853.jpg",
+    "https://i.ibb.co/yhs1BWF/sr2.jpg",
+    "https://i.ibb.co/ZJxcVMD/sr5.jpg",
+    "https://i.ibb.co/Jph42xn/sr3.jpg",
+    "https://i.ibb.co/fxr4X28/sr1.jpg",
+    "https://i.ibb.co/mzSg1Yy/sr4.jpg",
+    "https://i.ibb.co/vLK6jq9/sr6.jpg",
     "https://i.ibb.co/RhmT4RJ/Education.png",
     "https://i.ibb.co/Np5KvQD/proud-teacher-with-her-elementary-students.jpg"
 ]
 const Gallery = () => {
+
+
+
     const [imageData, setImageData] = useState({ img: '', i: 0 })
     const viewImg = (img, i) => {
         setImageData({ img, i })

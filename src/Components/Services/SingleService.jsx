@@ -17,7 +17,7 @@ const SingleService = ({ service }) => {
                 <div>
                     <p className='py-3'>{description.split(" ").slice(0, 20).join(" ") + "..."}  </p>
                     <div >
-                        <Link className='block bg-blue-500 text-center text-white px-2 py-1 rounded hover:bg-blue-800 duration-200' to={`services/${id}`}>Detials </Link>
+                        <Link className='block bg-blue-500 text-center text-white px-2 py-1 rounded hover:bg-blue-800 duration-200' to={`/services/${id}`}>Detials </Link>
                     </div>
                 </div>
             </div>

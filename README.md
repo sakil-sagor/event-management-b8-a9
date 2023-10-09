@@ -1,8 +1,14 @@
-# React + Vite
+# I-Dream event planner.
+ ## live Link: https://assignment9-b8.netlify.app/
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> User can find various types of event plan from here
+> user can booking any of our services
+> user can make his account for further booking
+> we have a gallery for our all events
+> We have a lot of year's experience in event managment.
+> we give you full time emergency support by our contact us service.
+> Providing qualityful event service in all processes
+> Making service quality top priority in all we do
+> Delivering customer satisfaction through quality service

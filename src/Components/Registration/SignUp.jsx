@@ -2,22 +2,23 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
 const SignUp = ({ loginArea }) => {
     const { createUser } = useContext(AuthContext);
-    // const [name, setName] = useState('');
-    // const [phone, setPhone] = useState('');
-    // const [bloodGroup, setBloodGroup] = useState('');
-    // const [district, setDistrict] = useState('');
-    // const [thana, setThana] = useState('');
-    // const [password, setPassword] = useState('');
+
     const navigate = useNavigate()
 
 
 
     const handleSubmit = (e) => {
+        const capitalLetterRegex = /[A-Z]/;
+        const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
         e.preventDefault();
         const form = new FormData(e.currentTarget);
 
@@ -25,13 +26,32 @@ const SignUp = ({ loginArea }) => {
         const email = form.get('email');
         const password = form.get('password');
 
+        // if (password.length < 6) {
+
+        //     toast.error('Password length is less then 6 charecter')
+        //     return
+        // }
+        // if (!capitalLetterRegex.test(password)) {
+        //     toast.error('Password must contain at least one capital letter.')
+        //     return;
+        // }
+
+        // if (!specialCharacterRegex.test(password)) {
+        //     toast.error('Password must contain at least one special character.')
+        //     return;
+        // }
+
+
         // create user
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state ? location.state : '/');
+                toast.success("User Register successfully ")
             })
             .catch(error => {
-                console.error(error)
+                console.error(error.message)
+                toast.error(error.message)
             })
 
 
@@ -73,6 +93,11 @@ const SignUp = ({ loginArea }) => {
 
                 </form >
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                theme="colored"
+            />
         </div>
     );
 };

@@ -22,19 +22,16 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-                if (result.user) {
-                    navigate(location?.state ? location.state : '/');
-                    toast.success("User login successfully ")
+                toast.success("User login successfully ")
+                navigate(location?.state ? location.state : '/');
 
-                    // navigate after login
 
-                }
 
 
             })
             .catch(error => {
                 console.error(error);
-
+                toast.error(error.message)
             })
 
 
@@ -44,9 +41,11 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 navigate(location?.state ? location.state : '/');
+                toast.success("User Register successfully ")
             })
             .catch(error => {
                 console.error(error)
+                toast.error(error.message)
             })
     }
 
